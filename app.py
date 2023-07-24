@@ -65,7 +65,7 @@ def login():
 @jwt_required()
 def perfil():
     usuario_atual = get_jwt_identity()
-    return jsonify({"message": f"Olá, {usuario_atual}! Este é um recurso protegido."}), 200
+    return jsonify({"message": usuario_atual}), 200
 
 # Rota para adicionar um filme e suas informações
 @app.route('/filmes', methods=['POST'])
